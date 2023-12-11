@@ -11,3 +11,12 @@ def clock_converter(timestr):
     elif time[-2:]=="am":
         am_time=int(time.replace("am",""))
         #handle if hour is a single digit
+        if am_time<1000:
+            return("0"+str(am_time))
+        else:
+            return(am_time)
+    #handle pm
+    else:
+        pm=int(time.replace("pm",""))+1200
+        return(pm)
+print(clock_converter("8.01am"))#input any time in the quotations
